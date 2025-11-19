@@ -1,6 +1,4 @@
-import Link from "next/link";
 import React from "react";
-
 const data = [
   {
     id: 1,
@@ -73,34 +71,21 @@ const data = [
     description: "A clean social media feed interface.",
   },
 ];
-
-const ServicesPage = () => {
-  return (
-    <div className="p-8 ">
-      <h1 className="text-3xl font-bold mb-6 text-center">Our Services</h1>
-
-      <div className="grid grid-cols-3 gap-6">
-        {data.map((i) => (
-          <Link href={`/services/${i.id}`} key={i.id}>
-            <div className="border rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer group bg-white">
-              <img
-                src={i.image}
-                alt={i.title}
-                className="w-full h-52 object-cover group-hover:scale-105 transition duration-500"
-              />
-
-              <div className="p-4">
-                <h2 className="text-lg font-semibold group-hover:text-blue-500 transition">
-                  {i.title}
-                </h2>
-                <p className="text-sm text-gray-600 mt-1">{i.description}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
+const DetailsPage = async ({ params }) => {
+  const { id } = await params;
+  const filterData = data.find((i) => Number(id) === i.id);
+  if (filterData) {
+    return (
+      <div className="p-6">
+        <p className="text-xl font-semibold">Params ID: {filterData.id}</p>
+        <p>{filterData.title}</p>
+        <p>{filterData.name}</p>
+        <p>{filterData.description}</p>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <p>Data not found</p>;
+  }
 };
 
-export default ServicesPage;
+export default DetailsPage;
