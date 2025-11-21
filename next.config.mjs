@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
   },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/products/add",
+  //       destination: "/products/add",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

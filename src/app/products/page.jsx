@@ -1,11 +1,20 @@
+import { dbConnect } from "@/lib/dbConnect";
+import { redirect } from "next/navigation";
 import React from "react";
-
+import getProducts from "../actions/products/getProducts";
+// export const dynamic = "force-dynamic";
 const ProductsPage = async ({}) => {
-  const res = await fetch("http://localhost:3000/api/items", {
-    cache: "force-cache",
-  });
-  const data = await res.json();
+  // const res = await fetch("https://nextjs-cooking-theta.vercel.app/api/items");
+  // const data = await res.json();
+  const data = await getProducts();
 
+  // {
+  //   cache: "force-cache",
+  // }
+  // data 3post er jon p redirect
+  // if (data.length > 3) {
+  //   redirect("/");
+  // }
   return (
     <div className="mt-3 grid grid-cols-4 gap-3">
       {data.map((i) => (

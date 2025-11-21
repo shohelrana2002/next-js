@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Footer from "daisyui/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +33,19 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar />
-        <main className="min-h-[calc(100vh-140px)] place-content-center place-items-center">
+        <main className="min-h-[calc(100vh-60px)] place-content-center place-items-center">
           {children}
         </main>
-        <p>Footer</p>
+        <div>
+          <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+            <aside>
+              <p>
+                Copyright © {new Date().getFullYear()} - All right reserved by
+                Md. Shohel Rana
+              </p>
+            </aside>
+          </footer>
+        </div>
       </body>
     </html>
   );

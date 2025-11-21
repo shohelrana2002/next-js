@@ -18,16 +18,7 @@ const NavBar = () => {
           Home
         </Link>
       </li>
-      <li>
-        <Link
-          href="/about"
-          className={
-            isActive("/about") ? "active font-semibold bg-orange-300" : ""
-          }
-        >
-          About
-        </Link>
-      </li>
+
       <li>
         <Link
           href="/services"
