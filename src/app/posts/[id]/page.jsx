@@ -4,7 +4,14 @@ export const SinglePost = async (id) => {
   const data = await res.json();
   return data;
 };
-
+export async function generateMetadata({ params }) {
+  const id = (await params).id;
+  const post = await SinglePost(id);
+  return {
+    title: post.title,
+    description: post.body,
+  };
+}
 const PostsDetailsPage = async ({ params }) => {
   const { id } = await params;
   const data = await SinglePost(Number(id));

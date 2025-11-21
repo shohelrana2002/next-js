@@ -6,7 +6,10 @@ export const FakeDataGet = async () => {
   const data = await res.json();
   return data;
 };
-
+export const metadata = {
+  title: "All Posts",
+  description: "Post  Here Your comment !!",
+};
 const PostsPage = async () => {
   const posts = await FakeDataGet();
 

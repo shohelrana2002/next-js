@@ -1,4 +1,9 @@
+import Link from "next/link";
 import MealSearchInput from "./components/MealSearchInput";
+export const metadata = {
+  title: "All Meals",
+  description: "All Meals Get Now !!",
+};
 
 const MealsPage = async ({ searchParams }) => {
   const query = await searchParams;
@@ -20,10 +25,14 @@ const MealsPage = async ({ searchParams }) => {
     return (
       <div className="mt-32">
         <MealSearchInput />
-        <div className="max-w-12">
+        <div className=" border-2 grid grid-cols-5 border-r-amber-500 px-12 py-10 gap-12">
           {data?.map((i, index) => (
-            <div className="mt-12" key={index}>
+            <div className="mt-12 " key={index}>
               <p>{i?.strMeal}</p>
+              <p>{i?.strInstructions.substring(0, 30)}</p>
+              <Link href={`/meals/${i?.idMeal}`} className="btn btn-secondary">
+                Details
+              </Link>
             </div>
           ))}
         </div>

@@ -42,7 +42,7 @@ const NavBar = () => {
         <Link
           href="/posts"
           className={
-            isActive("/contact") ? "active font-semibold bg-orange-300" : ""
+            isActive("/posts") ? "active font-semibold bg-orange-300" : ""
           }
         >
           Posts
