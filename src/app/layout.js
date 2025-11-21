@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/NavBar";
+import NavBar from "@/components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +24,12 @@ export const metadata = {
   keywords: ["Next.js", "React", "JavaScript"],
   description: "NextJS Cooking Now !!",
 };
-
+// ${ralway.className}
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        // ${geistSans.variable} ${geistMono.variable}
-        className={`${ralway.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar />
         <main className="min-h-[calc(100vh-140px)] place-content-center place-items-center">

@@ -58,6 +58,28 @@ const NavBar = () => {
           Meals
         </Link>
       </li>
+      <li>
+        <Link
+          href="/products"
+          className={
+            isActive("/products") ? "active font-semibold bg-orange-300" : ""
+          }
+        >
+          Products
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/products/add"
+          className={
+            isActive("/products/add")
+              ? "active font-semibold bg-orange-300"
+              : ""
+          }
+        >
+          Add Products
+        </Link>
+      </li>
     </>
   );
 
