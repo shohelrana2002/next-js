@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MealSearchInput from "./components/MealSearchInput";
+import Image from "next/image";
 export const metadata = {
   title: "All Meals",
   description: "All Meals Get Now !!",
@@ -21,33 +22,27 @@ const MealsPage = async ({ searchParams }) => {
   };
   const data = await fetchData();
 
-  if (data?.length > 0) {
-    return (
-      <div className="mt-32">
-        <MealSearchInput />
-        <div className=" border-2 grid grid-cols-5 border-r-amber-500 px-12 py-10 gap-12">
-          {data?.map((i, index) => (
-            <div className="mt-12 " key={index}>
-              <p>{i?.strMeal}</p>
-              <p>{i?.strInstructions.substring(0, 30)}</p>
-              <Link href={`/meals/${i?.idMeal}`} className="btn btn-secondary">
-                Details
-              </Link>
-            </div>
-          ))}
-        </div>
+  return (
+    <div className="mt-32">
+      <MealSearchInput />
+      <div className="grid grid-cols-4 rounded-2xl px-12 py-10 gap-12">
+        {data?.map((i, index) => (
+          <div className="border border-amber-400 p-4 " key={index}>
+            <Image
+              width={600}
+              height={600}
+              src={i.strMealThumb}
+              alt={i.strMeal}
+            />
+            <p>{i?.strMeal}</p>
+            <p>{i?.strInstructions.substring(0, 30)}</p>
+            <Link href={`/meals/${i?.idMeal}`} className="btn btn-secondary">
+              Details
+            </Link>
+          </div>
+        ))}
       </div>
-    );
-  } else {
-    return (
-      <>
-        <div>
-          <MealSearchInput />
-        </div>
-        <h3>No data Found</h3>
-      </>
-    );
-  }
+    </div>
+  );
 };
-
 export default MealsPage;

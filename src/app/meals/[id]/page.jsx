@@ -1,5 +1,10 @@
+import Image from "next/image";
 import React from "react";
-
+import { Lancelot } from "next/font/google";
+const lancelot = Lancelot({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 export const SingleMealsGet = async (id) => {
   try {
     const res = await fetch(
@@ -49,29 +54,33 @@ const SingleMeals = async ({ params }) => {
   }
 
   return (
-    <div className="flex justify-between gap-2 mx-auto mt-20 px-4">
+    <div
+      className={`flex font-black justify-between ${lancelot.className} gap-2 mx-auto mt-20 px-4`}
+    >
       <div className="flex-1">
         {/* Meal Title */}
-        <h1 className="text-3xl font-bold mb-4">{meal.strMeal}</h1>
+        <h1 className="text-3xl font-bold mb-4">{meal?.strMeal}</h1>
 
         {/* Image */}
-        <img
-          src={meal.strMealThumb}
-          alt={meal.strMeal}
-          className="w-full  rounded-lg shadow-md mb-6"
+        <Image
+          width={400}
+          height={400}
+          src={meal?.strMealThumb}
+          alt={meal?.strMeal}
+          className="w-full object-cover  rounded-lg shadow-md mb-6"
         />
       </div>
       <div className="flex-1">
         {/* Category & Area */}
         <p className="text-gray-600">
-          <strong>Category:</strong> {meal.strCategory} | <strong>Area:</strong>{" "}
-          {meal.strArea}
+          <strong>Category:</strong> {meal?.strCategory} |{" "}
+          <strong>Area:</strong> {meal?.strArea}
         </p>
 
         {/* Ingredients */}
         <h2 className="text-2xl font-semibold mt-8 mb-3">Ingredients</h2>
         <ul className="list-disc ml-6 text-gray-700">
-          {ingredients.map((item, index) => (
+          {ingredients?.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
@@ -79,7 +88,7 @@ const SingleMeals = async ({ params }) => {
         {/* Instructions (230 words limit) */}
         <h2 className="text-2xl font-semibold mt-8 mb-3">Instructions</h2>
         <p className="text-gray-800 leading-7">
-          {truncateWords(meal.strInstructions, 230)}
+          {truncateWords(meal?.strInstructions, 230)}
         </p>
       </div>
     </div>

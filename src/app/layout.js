@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 
@@ -9,6 +9,10 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+const ralway = Raleway({
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
@@ -25,7 +29,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // ${geistSans.variable} ${geistMono.variable}
+        className={`${ralway.className} antialiased`}
       >
         <NavBar />
         <main className="min-h-[calc(100vh-140px)] place-content-center place-items-center">
