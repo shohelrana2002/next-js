@@ -1,4 +1,8 @@
-export default function Home() {
+import UserInfo from "@/components/UserInfo";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
+export default async function Home() {
+  const session = await getServerSession(authOptions);
   return (
     <div className="bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-6">
       <div className="text-center p-12 rounded-2xl ">
@@ -10,10 +14,10 @@ export default function Home() {
           This is a clean and modern homepage built with Tailwind CSS. You can
           customize it anytime. Enjoy building beautiful UI!
         </p>
-
+        {JSON.stringify(session)}
+        <UserInfo />
         <div className="flex justify-center gap-4">
           <button className="btn btn-secondary">Get Started</button>
-
           <button className="btn btn-outline">Learn More</button>
         </div>
       </div>

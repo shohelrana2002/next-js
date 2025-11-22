@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import LoginButton from "./LoginButton";
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -111,9 +112,7 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end gap-x-4">
-        <Link href="/login">
-          <button className="btn btn-primary">Login</button>
-        </Link>
+        <LoginButton />
         <Link href="/register">
           <button className="btn btn-secondary">Register</button>
         </Link>
