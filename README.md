@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🍽️ Next.js Cooking Project
 
-## Getting Started
+A modern and responsive Next.js application designed for cooking recipes, built with **Next.js 16**, **React 19**, **TailwindCSS v4**, and **DaisyUI**. The app is deployed live on Vercel.
 
-First, run the development server:
+🔗 **Live Website:** https://nextjs-cooking-theta.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Features
+
+- ⚡ **Next.js 16 App Router**
+- 🎨 **TailwindCSS v4** for styling
+- 🌸 **DaisyUI** components
+- 🍳 Beautiful UI for recipes & cooking items
+- 📚 Clean folder structure
+- ☁️ Hosted on **Vercel**
+
+---
+
+## 📦 Tech Stack
+
+| Technology  | Version |
+| ----------- | ------- |
+| Next.js     | 16.0.3  |
+| React       | 19.2.0  |
+| MongoDB     | 7.0.0   |
+| TailwindCSS | 4.1.17  |
+| DaisyUI     | 5.5.5   |
+| ESLint      | 9.x     |
+
+---
+
+## 📁 Project Structure
+
+```
+my-fist-next-js-project/
+├── app/
+│   ├── page.jsx
+│   ├── layout.jsx
+│   └── ...
+├── components/
+├── public/
+├── styles/
+├── package.json
+└── README.md
 ```
 
-Open [ http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<<<<<<< HEAD
+Open [ https://nextjs-cooking-theta.vercel.app](https://nextjs-cooking-theta.vercel.app) with your browser to see the result.
+=======
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> > > > > > > 909b5bea6657d3cf2acbd50a8737a13b74678cb3
 
-## Learn More
+## 🛠 Installation & Setup
 
-To learn more about Next.js, take a look at the following resources:
+Follow these steps to run the project locally:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clone repository
+git clone your-repository-link
+cd my-fist-next-js-project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Install dependencies
+npm install
 
-## Deploy on Vercel
+# Run development server
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app will be available at:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+https://nextjs-cooking-theta.vercel.app
+```
+
+---
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🧩 Scripts
+
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start development server |
+| `npm run build` | Build production output  |
+| `npm start`     | Start production server  |
+| `npm run lint`  | Run ESLint               |
+
+---
+
+## 🗄️ Environment Variables (If using MongoDB)
+
+Create `.env.local` file:
+
+```
+MONGODB_URI=your-mongodb-url
+```
+
+---
+
+## 📤 Deployment
+
+This project is deployed on **Vercel**.
+Just push to GitHub → Vercel auto-deploys.
+
+---
+
+## 📸 Screenshots
+
+_Add screenshots here if you want._
+
+---
+
+## 🤝 Contribution
+
+Feel free to open issues and pull requests.
+
+---
+
+## 📜 License
+
+This project is **MIT Licensed**.
+
+---
+
+### 💙 Created by Shohel Rana
+
+Enjoy building with **Next.js 16 + React 19**!

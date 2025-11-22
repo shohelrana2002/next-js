@@ -8,13 +8,16 @@ const ProductsForm = () => {
     const form = e.target;
     const name = form.title.value;
     const formData = { name };
-    const res = await fetch(" http://localhost:3000/api/items", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    const res = await fetch(
+      " https://nextjs-cooking-theta.vercel.app/api/items",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    );
 
     const data = await res.json();
     if (data?.insertedId) {

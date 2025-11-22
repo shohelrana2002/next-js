@@ -4,9 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
+import { useSession } from "next-auth/react";
 
 const NavBar = () => {
   const pathname = usePathname();
+  const session = useSession();
 
   const isActive = (path) => pathname === path;
   const nav = (
@@ -112,10 +115,16 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end gap-x-4">
-        <LoginButton />
-        <Link href="/register">
-          <button className="btn btn-secondary">Register</button>
-        </Link>
+        {session?.data?.user ? (
+          <LogoutButton />
+        ) : (
+          <>
+            <LoginButton />
+            <Link href="/register">
+              <button className="btn btn-secondary">Register</button>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
