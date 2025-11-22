@@ -9,6 +9,7 @@ A modern and responsive Next.js application designed for cooking recipes, built 
 ## 🚀 Features
 
 - ⚡ **Next.js 16 App Router**
+- 🔐 Authentication using **NextAuth (Google + Credentials)**
 - 🎨 **TailwindCSS v4** for styling
 - 🌸 **DaisyUI** components
 - 🍳 Beautiful UI for recipes & cooking items
@@ -23,6 +24,7 @@ A modern and responsive Next.js application designed for cooking recipes, built 
 | ----------- | ------- |
 | Next.js     | 16.0.3  |
 | React       | 19.2.0  |
+| NextAuth    | 4.24.13 |
 | MongoDB     | 7.0.0   |
 | TailwindCSS | 4.1.17  |
 | DaisyUI     | 5.5.5   |
